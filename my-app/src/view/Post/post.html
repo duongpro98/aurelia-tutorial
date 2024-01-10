@@ -1,0 +1,28 @@
+<template>
+<!--  <require from="../../value-converter/my-uppercase"></require>-->
+  <require from="../../components/employee-list"></require>
+  <div class="container mt-5">
+    <div class="mb-3">
+      <label for="postTitle" class="form-label">Title:</label>
+      <input type="text" class="form-control" id="postTitle" value.bind="newPost.title">
+    </div>
+
+    <div class="mb-3">
+      <label for="postBody" class="form-label">Body:</label>
+      <textarea class="form-control" id="postBody" rows="3" value.bind="newPost.body"></textarea>
+    </div>
+
+    <!-- Button to create a new post -->
+    <button click.trigger="createNewPost()" class="btn btn-primary mb-3">Create New Post</button>
+
+    <h2>Post List</h2>
+    <employee-list employees.bind="employees"></employee-list>
+<!--    <ul class="list-group">-->
+<!--      <li repeat.for="employee of employees" class="list-group-item">-->
+<!--        <h5>${employee.title  | myUppercase}</h5>-->
+<!--        <p>${employee.body}</p>-->
+<!--      </li>-->
+<!--    </ul>-->
+  </div>
+</template>
+

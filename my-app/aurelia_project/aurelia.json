@@ -1,0 +1,52 @@
+  {
+  "name": "first-app",
+  "type": "project:application",
+  "paths": {
+    "root": "src",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/attributes",
+    "valueConverters": "resources/value-converters",
+    "bindingBehaviors": "resources/binding-behaviors"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "fileExtension": ".ts"
+  },
+  "build": {
+    "options": {
+      "server": "dev",
+      "extractCss": "prod",
+      "coverage": false
+    }
+  },
+  "platform": {
+    "hmr": false,
+    "open": false,
+    "port": 8080,
+    "host": "localhost",
+    "output": "dist"
+  },
+    "dependencies": [
+      {
+        "name": "jquery",
+        "path": "../node_modules/jquery/dist",
+        "main": "jquery"
+      },
+      {
+        "name": "bootstrap",
+        "path": "../node_modules/bootstrap/dist/js",
+        "main": "bootstrap.min"
+      },
+      {
+        "name": "firebase",
+        "path": "../node_modules/firebase",
+        "main": "app.js"
+      },
+      {
+        "name": "aurelia-fetch-client",
+        "path": "../node_modules/aurelia-fetch-client/dist/amd",
+        "main": "aurelia-fetch-client.js"
+      }
+    ]
+}
