@@ -49,7 +49,9 @@ export class App {
       { route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('view/Home/home'), title: 'Home' },
       { route: 'login', name: 'login', moduleId: PLATFORM.moduleName('view/Login/log-in-view'), title: 'Log In' },
       { route: 'about', name: 'about', moduleId: PLATFORM.moduleName('view/About/about'), title: 'About' },
-      { route: 'post/:slug', name: 'post', moduleId: PLATFORM.moduleName('view/Post/post'), title: 'Post' },
+      { route: 'employee', name: 'employee', moduleId: PLATFORM.moduleName('view/Employee/employee'), title: 'Employee' },
+      { route: 'employee/create', name: 'employee-create', moduleId: PLATFORM.moduleName('view/Employee/employee-create'), title: 'Create Employee' },
+      { route: 'employee/edit/:slug', name: 'employee-edit', moduleId: PLATFORM.moduleName('view/Employee/employee-edit'), title: 'Edit Employee' },
     ]);
   }
 }

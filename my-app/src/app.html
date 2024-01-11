@@ -5,9 +5,10 @@
     <li show.bind="!authService.isAuthenticated"><a route-href="login">Log In</a></li>
     <li show.bind="authService.isAuthenticated"><a click.delegate="logout()">Log Out</a></li>
     <li><a route-href="about">About</a></li>
-    <li><a route-href="route: post; params.bind: {slug: 'ok-ok'}">Ok Ok</a></li>
+    <li><a route-href="employee">Employees</a></li>
+    <li><a route-href="employee-create">Add new employee</a></li>
+<!--    <li><a route-href="route: employee; params.bind: {slug: 'ok-ok'}">Employees</a></li>-->
     <h1>Welcome, ${authService.currentUser}!</h1>
   </ul>
-  <button type="button" class="btn btn-primary">Primary</button>
   <router-view></router-view>
 </template>

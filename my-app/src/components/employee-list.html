@@ -3,6 +3,7 @@
     <li repeat.for="employee of employees" class="list-group-item">
       <h5>${employee.title}</h5>
       <p>${employee.body}</p>
+      <a route-href="route: employee-edit; params.bind: {slug: employee.id}">Edit employee</a>
     </li>
   </ul>
 </template>
