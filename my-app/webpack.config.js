@@ -194,6 +194,20 @@ module.exports = ({ production }, { analyze, hmr, port, host }) => ({
   devtool: production ? undefined : 'cheap-module-source-map',
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        issuer: /\.[tj]s$/i
+      },
+      {
+        test: /\.scss$/,
+        use: ['css-loader', 'sass-loader'],
+        issuer: /\.html?$/i
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
       // CSS required in JS/TS files should use the style-loader that auto-injects it into the website
       // only when the issuer is a .js/.ts file, so the loaders are not applied inside html templates
       {

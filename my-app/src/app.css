@@ -1,0 +1,43 @@
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+}
+
+.content-container {
+  padding: 32px;
+}
+
+h1 {
+  color: #336699;
+  font-size: 2em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #336699;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Content Styles */
+h1.welcome-message {
+  color: #336699;
+  font-size: 1.5em;
+  margin-top: 20px;
+}

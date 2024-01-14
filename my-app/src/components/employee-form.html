@@ -2,19 +2,22 @@
   <form submit.delegate="submitForm()" class="container mt-4">
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" value.bind="employee.name" />
+      <input type="text" class="form-control" id="name" value.bind="employee.name & validate" />
     </div>
 
     <div class="mb-3">
       <label for="title" class="form-label">Position:</label>
-      <input type="text" class="form-control" id="title" value.bind="employee.title" />
+      <input type="text" class="form-control" id="title" value.bind="employee.title & validate" />
     </div>
 
     <div class="mb-3">
       <label for="body" class="form-label">Department:</label>
-      <input type="text" class="form-control" id="body" value.bind="employee.body" />
+      <input type="text" class="form-control" id="body" value.bind="employee.body & validate" />
     </div>
-
+    <div if.bind="validationController.errors.length > 0">
+      <p repeat.for="error of validationController.errors">${error}</p>
+    </div>
+<!--    <div validation-errors.for="fieldName"></div>-->
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="button" class="btn btn-secondary" click.delegate="resetForm()">Reset</button>
   </form>

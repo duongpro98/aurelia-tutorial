@@ -1,14 +1,21 @@
 <template>
-  <h1>${message}2222</h1>
-  <ul>
-    <li><a route-href="home">Home</a></li>
-    <li show.bind="!authService.isAuthenticated"><a route-href="login">Log In</a></li>
-    <li show.bind="authService.isAuthenticated"><a click.delegate="logout()">Log Out</a></li>
-    <li><a route-href="about">About</a></li>
-    <li><a route-href="employee">Employees</a></li>
-    <li><a route-href="employee-create">Add new employee</a></li>
-<!--    <li><a route-href="route: employee; params.bind: {slug: 'ok-ok'}">Employees</a></li>-->
-    <h1>Welcome, ${authService.currentUser}!</h1>
-  </ul>
-  <router-view></router-view>
+<!--  header-->
+  <require from="./app.css"></require>
+  <div class="nav-container">
+    <h1>${message}2222</h1>
+    <ul>
+      <li><a route-href="home">Home</a></li>
+      <li show.bind="!authService.isAuthenticated"><a route-href="login">Log In</a></li>
+      <li show.bind="authService.isAuthenticated"><a click.delegate="logout()">Log Out</a></li>
+      <li><a route-href="about">About</a></li>
+      <li><a route-href="employee">Employees</a></li>
+      <li><a route-href="employee-create">Add new employee</a></li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="content-container">
+    <h1 class="welcome-message">Welcome, ${authService.currentUser}!</h1>
+    <router-view></router-view>
+  </div>
 </template>

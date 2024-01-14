@@ -47,6 +47,16 @@
         "name": "aurelia-fetch-client",
         "path": "../node_modules/aurelia-fetch-client/dist/amd",
         "main": "aurelia-fetch-client.js"
+      },
+      {
+        "name": "aurelia-webpack-plugin",
+        "path": "../node_modules/aurelia-webpack-plugin/dist/amd",
+        "main": "index"
+      },
+      {
+        "name": "aurelia-pal-browser",
+        "path": "../node_modules/aurelia-pal-browser/dist/amd",
+        "main": "index"
       }
     ]
 }

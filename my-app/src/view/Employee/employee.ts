@@ -5,7 +5,7 @@ import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
 @autoinject
 export class Employee {
   slug: string | undefined;
-
+  private loading: boolean;
   private apiService: EmployeeService;
   @bindable private employees: any;
   private newPost = { title: '', body: '' };
@@ -28,8 +28,14 @@ export class Employee {
 
   async fetchData() {
     try {
-      this.employees = await this.apiService.getEmployeeData();
-      console.log('Employee Data:', this.employees);
+      this.loading = true;
+      setTimeout(async () => {
+        this.employees = await this.apiService.getEmployeeData();
+        this.loading = false;
+        console.log('Employee Data:', this.employees);
+      }, 2000);
+      // this.employees = await this.apiService.getEmployeeData();
+      // console.log('Employee Data:', this.employees);
     } catch (error) {
       // Handle error
       console.error('Error fetching data:', error);
