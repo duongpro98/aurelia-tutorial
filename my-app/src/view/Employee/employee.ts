@@ -33,7 +33,7 @@ export class Employee {
         this.employees = await this.apiService.getEmployeeData();
         this.loading = false;
         console.log('Employee Data:', this.employees);
-      }, 2000);
+      }, 1000);
       // this.employees = await this.apiService.getEmployeeData();
       // console.log('Employee Data:', this.employees);
     } catch (error) {

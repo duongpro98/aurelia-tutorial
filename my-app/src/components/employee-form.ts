@@ -1,6 +1,6 @@
 import { autoinject, bindable } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 import {EmployeeService, Employee} from "../service/employee-service";
-import {EventAggregator} from "aurelia-event-aggregator";
 import {ValidationController, ValidationControllerFactory, ValidationRules} from "aurelia-validation";
 import {validationMessages} from 'aurelia-validation';
 
@@ -8,9 +8,9 @@ import {validationMessages} from 'aurelia-validation';
 export class EmployeeForm {
   @bindable employee: Employee = { id: 0, name: '', title: '', body: '' };
   private validationController: ValidationController;
-  constructor(private employeeService: EmployeeService, private eventAggregator: EventAggregator, private controllerFactory: ValidationControllerFactory) {
+  constructor(private employeeService: EmployeeService, private controllerFactory: ValidationControllerFactory, private router: Router) {
     this.validationController = controllerFactory.createForCurrentScope();
-
+    this.router = router;
     validationMessages['required'] = `\${$displayName} is required!`;
     validationMessages['maxLength'] = `\${$displayName} is maxLength!`;
     ValidationRules
@@ -30,8 +30,9 @@ export class EmployeeForm {
       } else {
         // Updating an existing employee
         this.employeeService.updateEmployee(this.employee);
-        this.resetForm();
       }
+      this.resetForm();
+      this.router.navigateToRoute('employee');
     } else {
       console.log("validate false ", validationResult.results)
     }

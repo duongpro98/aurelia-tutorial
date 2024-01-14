@@ -27,8 +27,8 @@ export class EmployeeService {
   async createEmployeeData(employee: Employee): Promise<void> {
     employee.id = this.employees.length > 0 ? this.employees[this.employees.length - 1].id + 1 : 1;
     this.employees.push(employee);
-    this.eventAggregator.publish('employeesUpdated', { employees: this.employees });
-    console.log("published ", this.employees)
+    // this.eventAggregator.publish('employeesUpdated', { employees: this.employees });
+    // console.log("published ", this.employees)
   }
 
   updateEmployee(employee: Employee): void {

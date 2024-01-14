@@ -4,6 +4,7 @@
       <h5>${employee.title}</h5>
       <p>${employee.body}</p>
       <a route-href="route: employee-edit; params.bind: {slug: employee.id}">Edit employee</a>
+      <button class="btn btn-primary" click.trigger="delete(employee.id)">Delete</button>
     </li>
   </ul>
 </template>
